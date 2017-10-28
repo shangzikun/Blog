@@ -11,31 +11,31 @@
 			// var_dump($sql);
 			// die();
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return $data;
 		}
 		// function getUserInfoByName($name) {
 		// 	$sql = "select * from user where name = '{$name}'";
 		// 	$res = $this->mysqli->query($sql);
-		// 	$data = $res->fetch_all(MYSQL_ASSOC);
+		// 	$data = $res->fetch_all(MYSQLI_ASSOC);
 		// 	return $data[0];
 		// }
 		function getBlogInfoById($id) {
 			$sql = "select * from blog where id = '{$id}'";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return isset($data[0]) ? $data[0] :array();
 		}
 		function getUserInfoById($id) {
 			$sql = "select * from blog where id = '{$id}'";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return isset($data[0]) ? $data[0] :array();
 		}
 		function getBlogCount() {
 			$sql = "select count(*) as num from blog ";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return $data[0];
 		}
 		public function audit($id,$status=0) {

@@ -11,13 +11,13 @@ class CommentModel extends Model {
 	public function getLists($offset=0,$limit=20,$order='id desc',$where='1') {
 		$sql = "select * from comment where {$where} order by {$order} limit {$offset},{$limit}";
 		$res = $this->mysqli->query($sql);
-		$data = $res->fetch_all(MYSQL_ASSOC);
+		$data = $res->fetch_all(MYSQLI_ASSOC);
 		return $data;
 	}
 	public function getCount($where=1) {
 		$sql = "select count(*) as num from comment where {$where}";
 		$res = $this->mysqli->query($sql);
-		$data = $res->fetch_all(MYSQL_ASSOC);
+		$data = $res->fetch_all(MYSQLI_ASSOC);
 		return isset($data[0]['num']) ? $data[0]['num'] : 0;
 	}
 } 

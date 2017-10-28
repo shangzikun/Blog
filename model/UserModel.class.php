@@ -11,13 +11,13 @@ class UserModel extends Model {
 	public function getUserLists() {
 			$sql = "select * from user";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return $data;
 	}
 	public function getUserInfo() {
 			$sql = "select * from user";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			// var_dump($data);
 			// die();
 			return isset($data[0]) ? $data[0] :array();
@@ -30,13 +30,13 @@ class UserModel extends Model {
 	public function getUserInfoById($id) {
 			$sql = "select * from user where id = {$id}";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return isset($data[0]) ? $data[0] :array();
 	}
 	public function getUserInfoByEmail($email) {
 			$sql = "select * from user where email = '{$email}'";
 			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
+			$data = $res->fetch_all(MYSQLI_ASSOC);
 			return isset($data[0]) ? $data[0] :array();
 	}
 }	
