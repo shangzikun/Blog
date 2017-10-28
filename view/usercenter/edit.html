@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	h1 { text-align:center;}
+	table { margin:0 auto;}
+	td { width: 100px;text-align:center;}
+	body { width: 1000px;text-align:center;}
+	form { margin: 0 auto;width: 100px;}
+	</style>
+</head>
+<body>
+<h1>修改</h1>
+<form  action="index.php?c=UserCenter&a=doEditUserInfo" method="post"  enctype="multipart/form-data">
+	<table> 
+			 <tr>
+			 	<td>姓名:<input type="text" name="name" value="<?php echo $userInfo['name']; ?>" ></td>
+			 </tr>
+	         <tr>
+	         	<td>邮箱:<input type="text" name="email" value="<?php echo $userInfo['email']; ?>" ></td>
+	         </tr>
+		     <tr>
+		     	<td>密码:<input type="text" name="password" value="<?php echo $userInfo['password']; ?>" ></td>
+		     </tr>
+		     <tr>
+		        <td>头像:<input type="file" name="image" ></td>
+		     	<img src="<?php echo $userInfo['image']; ?>" width="100" height="auto" >
+		     	
+		     </tr>
+			 <tr>
+			 	<td colspan="2" align="center"><input type="submit" name ="" value="提交"></td>
+			 </tr>
+			 <input type="hidden" name="id" value="<?php echo $userInfo['id']; ?>">
+		</table> 
+		<a href="index.php?c=Home&a=back">返回上一页</a>
+</form>
+</body>
+</html>

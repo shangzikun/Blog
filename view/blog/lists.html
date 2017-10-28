@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*body {width:1000px;margin: 0 auto}*/
+		table {margin:0 auto;}
+		td {width:100px;text-align:center;}
+	</style>
+	<meta charset="utf-8">
+</head>
+<body>
+<table border="1px" cellspacing="0" cellpadding="0"> 
+	<tr>
+		<td>序号</td>
+		<td>段子</td>
+		<td>图片</td>
+		<td>分类</td>
+		<td>上传时间</td>
+		<td>操作</td>
+	</tr>
+
+	<?php foreach($data as $key=>$value) { ?>
+	<tr>
+		<td><?php echo $value['id']; ?></td>
+		<td><?php echo mb_substr($value['content'], 0, 19,'utf8'); ?></td>		
+		<td><img src="<?php echo $value['image']; ?>" width="100" height="100" alt="no pic"></td>
+		<td><?php echo $value['name']; ?></td>
+		<td><?php echo $value['createtime']; ?></td>
+		<td>
+		<?php if ($value['status'] == 0) { ?>
+		<a href="index.php?c=blog&a=online&id=<?php echo $value['id']; ?>">上线</a>
+		<?php } else if ($value['status'] == 1) { ?>
+		<a href="index.php?c=blog&a=offline&id=<?php echo $value['id']; ?>">下线</a>
+		<?php } ?>
+		<a href="index.php?c=Blog&a=Info&id=<?php echo $value['id']; ?>">详情</a></td>
+	</tr>
+	<?php } ?>
+</table>
+<div >
+	<ul>
+		<?php for ($i=1; $i<=$allpage; $i++) { ?> 
+			<li><a href="index.php?c=Blog&a=lists&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+		<?php } ?>
+	</ul>	
+</div>
+<a href="index.php?c=Blog&a=add">发段子</a>
+</body>
+</html>

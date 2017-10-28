@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	h1 { text-align:center;}
+	table { margin:0 auto;}
+	td { width: 100px;text-align:center;}
+	body { width: 1000px;text-align:center;}
+	form { margin: 0 auto;width: 100px;}
+	</style>
+</head>
+<body>
+<h1>注册</h1>
+<form  action="index.php?c=UserCenter&a=doReg" method="post"  enctype="multipart/form-data">
+	<table align="center" bgcolor="yellow" cellspacing="2px" cellpadding="2px" border="2px" bordercolor="blue"> 
+		<caption align="center">注册</caption> 
+			 <tr>
+			 	<td>姓名:</td>
+			 	<td><input type="text" name="name"></td>
+			 </tr>
+	         <tr>
+	         	<td>邮箱:</td>
+	         	<td><input type="text" name="email"></td>
+	         </tr>
+		     <tr>
+		     	<td>密码:	</td>
+		     	<td><input type="text" name="password"></td>
+		     </tr>
+		     <tr>
+		     	<td>头像:	</td>
+		     	<td><input type="file" name="photo"></td>
+		     </tr>
+			 <tr>
+			 	<td colspan="2" align="center"><input type="submit" name ="" value="ok"></td>
+			 </tr>
+		</table> 
+		<a href="index.php?c=UserCenter&a=login">返回</a>
+</form>
+</body>
+</html>

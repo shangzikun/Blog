@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+	<title>发布段子</title>	
+	<style type="text/css">
+	table { margin:0 auto;}
+	body { width: 1000px;text-align:center;}
+	form { margin: 0 auto;width: 100px;}
+	</style>
+</head>
+<body>
+<h1>添加段子</h1>
+	<form action="./index.php?c=BLog&a=doAdd" method="post" enctype="multipart/form-data">
+		<table> 
+			 分类：
+			    <select name="classify" >
+			    		<option >请选择</option>
+			    		<?php foreach ($classify as $value) { ?>
+			    		<option disabled="true"><?php echo $value['name']; ?></option>
+								<?php foreach ($value['child'] as $v) { ?>
+			    				<option value="<?php echo $v['id']; ?>">--<?php echo $v['name']; ?></option>	
+			    				<?php } ?>
+			    		<?php } ?>
+			    </select>
+			<button><a href="index.php?c=Classify&a=add">添加分类</a></button>
+			<!-- <button><a href="index.php?c=Classify&a=del">删除分类</a></button>
+			<button><a href="index.php?c=Classify&a=edit">修改分类</a></button> -->
+			<br>
+			<br>
+			标题：<input type="text" name="title">
+			<br>
+			图片：<input type="file" name="image">
+			<br>
+		    内容:<textarea name="content" rows="20" cols="100"></textarea>
+		    <br>
+		    <input type="submit" name="">
+		</table> 
+	</form>
+</body>
+</html>
